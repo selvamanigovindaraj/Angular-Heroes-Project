@@ -30,5 +30,8 @@ export class HeroDetialComponent implements OnInit {
   goBack():void{
     this._location.back();
   }
-
+  save(): void {
+    this._heroService.update(this.hero)
+      .then(() => this.goBack());
+  }
 }
